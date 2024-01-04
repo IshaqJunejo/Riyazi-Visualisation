@@ -38,6 +38,10 @@ function drawCoordinates()
     ctx_1.lineTo(canvas_1.width, canvas_1.height / 2);
     ctx_1.stroke();
 
+    // Font
+    ctx_1.font = "12px Arial";
+    ctx_1.fontAlign = "center";
+
     for (let i = 0; i <= 30; i++)
     {
         ctx_1.beginPath();
@@ -47,6 +51,15 @@ function drawCoordinates()
         ctx_1.beginPath();
         ctx_1.arc(i * factor, canvas_1.height / 2, 2, 0, 2 * Math.PI);
         ctx_1.stroke();
+
+        if (i % 3 == 0 && i != 0 && i != 15 && i != 30)
+        {
+            // Numbers on Y-Axis
+            ctx_1.fillText((i - 15) * -1, canvas_1.width / 2 + 6, i * factor + 4);
+
+            // Numbers on X-Axis
+            ctx_1.fillText((i - 15), i * factor - 6, canvas_1.height / 2 - 4);
+        }
     }
 }
 
