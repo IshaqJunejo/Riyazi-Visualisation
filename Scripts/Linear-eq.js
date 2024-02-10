@@ -5,7 +5,17 @@ let factor = canvas_1.width / 30;
 let m;
 let n;
 
+let slider_2 = document.querySelector("#slider-2");
+let output_2 = document.querySelector("#value-2");
+output_2.innerHTML = slider_2.value;
+
 updateValues();
+
+slider_2.oninput = function()
+{
+    output_2.innerHTML = this.value;
+    updateValues();
+}
 
 function updateValues()
 {
@@ -23,6 +33,8 @@ function updateValues()
 
 function drawCoordinates()
 {
+    ctx_1.strokeStyle = "#111";
+
     // Rectangle Around
     ctx_1.strokeRect(0, 0, canvas_1.width, canvas_1.height);
     
@@ -86,6 +98,8 @@ function drawFunction()
 
 function drawLine()
 {
+    ctx_1.strokeStyle = "#8b0000";
+
     ctx_1.beginPath();
     ctx_1.moveTo(0, -yRight + canvas_1.height / 2);
     ctx_1.lineTo(canvas_1.width, -yLeft + canvas_1.height / 2);

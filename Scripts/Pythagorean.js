@@ -3,6 +3,10 @@ let canvas_2 = document.querySelector("#canvas-2");
 
 let ctx_2 = canvas_2.getContext("2d");
 
+let slider_2 = document.querySelector("#slider-2");
+let output_2 = document.querySelector("#value-2");
+output_2.innerHTML = slider_2.value;
+
 let output_3 = document.querySelector("#value-3");
 let output_4 = document.querySelector("#value-4");
 
@@ -13,6 +17,12 @@ output_3.innerHTML = perp * perp;
 output_4.innerHTML = base * base;
 
 updateValues();
+
+slider_2.oninput = function()
+{
+    output_2.innerHTML = this.value;
+    updateValues();
+}
 
 // Function to update all the values needed
 function updateValues()

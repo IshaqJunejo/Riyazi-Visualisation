@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/Main.css">
+    <link rel="stylesheet" href="Styles/Sliders.css">
     <title>Pythagorean Theorem</title>
 </head>
 <body>
@@ -11,9 +12,21 @@
         <canvas id="canvas-1" width="320" height="320"></canvas>
         <canvas id="canvas-2" width="320" height="320"></canvas>
     </div>
-    <div class="sliders">
-        <input type="range" min="50" max="120" value="100" class="slider" id="slider-1">
-        <input type="range" min="50" max="120" value="100" class="slider" id="slider-2">
+    <div class="sliders-container">
+        <div class="slider-container">
+            <input type="range" min="50" max="120" value="100" class="slider" id="slider-1">
+            <ul>
+                <li id="min"></li>
+                <li id="max"></li>
+            </ul>
+        </div>
+        <div class="slider-container">
+            <input type="range" min="50" max="120" value="100" class="slider" id="slider-2">
+            <ul>
+                <li id="min"></li>
+                <li id="max"></li>
+            </ul>
+        </div>
     </div>
     <div class="content">
         <p>Base = <em id="value-2"></em></p>
@@ -23,5 +36,6 @@
     </div>
     <script src="Scripts/Main.js"></script>
     <script src="Scripts/Pythagorean.js"></script>
+    <script src="Scripts/Slider.js"></script>
 </body>
 </html>

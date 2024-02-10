@@ -4,15 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/Main.css">
+    <link rel="stylesheet" href="Styles/Sliders.css">
     <title>Linear Equation</title>
 </head>
 <body>
     <div class="visual">
         <canvas id="canvas-1" width="320" height="320"></canvas>
     </div>
-    <div class="sliders">
-        <input type="range" min="-15" max="15" value="0" class="slider" id="slider-1">
-        <input type="range" min="-15" max="15" value="0" class="slider" id="slider-2">
+    <div class="sliders-container">
+        <div class="slider-container">
+            <input type="range" min="-5" max="5" value="0" class="slider" id="slider-1">
+            <ul>
+                <li id="min"></li>
+                <li id="max"></li>
+            </ul>
+        </div>
+        <div class="slider-container">
+            <input type="range" min="-15" max="15" value="0" class="slider" id="slider-2">
+            <ul>
+                <li id="min"></li>
+                <li id="max"></li>
+            </ul>
+        </div>
     </div>
     <div class="content">
         <p>Let Y = (m)X + n</p>
@@ -20,5 +33,6 @@
     </div>
     <script src="Scripts/Main.js"></script>
     <script src="Scripts/Linear-eq.js"></script>
+    <script src="Scripts/Slider.js"></script>
 </body>
 </html>
