@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/Main.css">
+    <title>Unit Circle</title>
+</head>
+<body>
+    <div class="visual">
+        <canvas id="canvas-1" width="320" height="320"></canvas>
+        <canvas id="canvas-2" width="640" height="320"></canvas>
+    </div>
+    <div class="sliders">
+        <input type="range" min="0" max="360" value="0" class="slider" id="slider-1">
+        <input type="range" min="0" max="360" value="0" class="slider" id="slider-2">
+    </div>
+    <div class="content">
+        <p id="value-1"></p>
+        <p id="value-2"></p>
+    </div>
+    <script src="Scripts/Main.js"></script>
+    <script src="Scripts/Circle.js"></script>
+</body>
+</html>
