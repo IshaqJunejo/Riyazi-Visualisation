@@ -10,19 +10,33 @@
 <body>
     <div class="visual">
         <canvas id="canvas-1" width="320" height="320"></canvas>
-        <canvas id="canvas-2" width="640" height="320"></canvas>
+        <canvas id="canvas-2" width="320" height="320"></canvas>
     </div>
     <div class="sliders-container">
         <div class="slider-container">
             <input type="range" min="0" max="360" value="0" class="slider" id="slider-1">
             <ul>
-                <li id="min">-Infinity</li>
-                <li id="max">+Infinity</li>
+                <li id="min"></li>
+                <li id="max"></li>
             </ul>
         </div>
     </div>
     <div class="content">
-        <p id="value-1"></p>
+        <p>Angle = <em id="value-1"></em></p>
+        <p>Cos(Angle) = <em id="value-3"></em></p>
+        <p>Sin(Angle) = <em id="value-4"></em></p>
+        <p>
+            In the First Canvas you can see a Unit Circle being formed as you move the range slider,
+            The Dotted Red line represents the radius of the circle (which is equal to 1),
+            The Blue Line represents the X-Value of the point on the circle in the Angle,
+            and the Green Line represents the Y-Value of the point on the circle in the Angle.
+        </p>
+        <p>
+            In the Second anvas you can see a Sine Wave and a Cosine Wave being formed as the Slider is moved,
+            The Vertical Dotted Red Line shows the Angle,
+            The Blue Wave is a Cosine Wave representing X-Value of the circle in that Angle and every Angle before it,
+            The Green Wave is a Sine Wave representing Y-Value of the circle just like the Cosine Wave.
+        </p>
     </div>
     <script src="Scripts/Main.js"></script>
     <script src="Scripts/Circle.js"></script>

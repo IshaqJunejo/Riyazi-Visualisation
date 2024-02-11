@@ -8,6 +8,9 @@ let factor3 = (canvas_2.width - 12) / 360;
 
 let angle;
 
+let output_3 = document.querySelector("#value-3");
+let output_4 = document.querySelector("#value-4");
+
 updateValues();
 
 function updateValues()
@@ -15,6 +18,10 @@ function updateValues()
     ctx_1.clearRect(0, 0, canvas_1.width, canvas_1.height);
     ctx_2.clearRect(0, 0, canvas_2.width, canvas_2.height);
     angle = parseInt(slider_1.value);
+
+    output_3.innerHTML = Math.round(Math.cos(angle * Math.PI / 180) * 1000) / 1000;
+    output_4.innerHTML = Math.round(Math.sin(angle * Math.PI / 180) * 1000) / 1000;
+
     drawGridCircle();
     drawGridWave();
 
