@@ -1,6 +1,6 @@
 let sliders = document.querySelectorAll(".slider-container");
 
-for (i = 0; i <= sliders.length; i++)
+for (i = 0; i < sliders.length; i++)
 {
     let minValue = sliders[i].querySelector("#min");
     let maxValue = sliders[i].querySelector("#max");
