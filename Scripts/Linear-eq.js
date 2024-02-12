@@ -7,13 +7,18 @@ let n;
 
 let slider_2 = document.querySelector("#slider-2");
 let output_2 = document.querySelector("#value-2");
-output_2.innerHTML = slider_2.value;
+output_2.innerHTML = (" + " + slider_2.value);
 
 updateValues();
 
 slider_2.oninput = function()
 {
-    output_2.innerHTML = this.value;
+    if (this.value > 0)
+    {output_2.innerHTML = (" + " + this.value);}
+    else if (this.value < 0)
+    {output_2.innerHTML = (" - " + this.value * -1);}
+    else
+    {output_2.innerHTML = ("");}
     updateValues();
 }
 
@@ -27,8 +32,10 @@ function updateValues()
     drawCoordinates();
     drawLine();
 
-    console.log(yLeft);
-    console.log(yRight);
+    if (slider_1.value == 1)
+    {output_1.innerHTML = "X";}
+    else
+    {output_1.innerHTML = slider_1.value + "X";}
 }
 
 function drawCoordinates()

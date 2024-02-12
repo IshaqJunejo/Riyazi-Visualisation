@@ -1,18 +1,23 @@
 let divider;
-let intercept;
+let yIntercept;
 
 let factorX = canvas_1.width / 30;
 let factorY = canvas_1.height / 30;
 
 let slider_2 = document.querySelector("#slider-2");
 let output_2 = document.querySelector("#value-2");
-output_2.innerHTML = slider_2.value;
+output_2.innerHTML = (" + " + slider_2.value);
 
 updateValues();
 
 slider_2.oninput = function()
 {
-    output_2.innerHTML = this.value;
+    if (this.value > 0)
+    {output_2.innerHTML = (" + " + this.value);}
+    else if (this.value < 0)
+    {output_2.innerHTML = (" - " + this.value * -1);}
+    else
+    {output_2.innerHTML = ("");}
     updateValues();
 }
 
@@ -20,10 +25,15 @@ function updateValues()
 {
     ctx_1.clearRect(0, 0, canvas_1.width, canvas_1.height);
     divider = parseInt(slider_1.value);
-    intercept = parseInt(slider_2.value);
+    yIntercept = parseInt(slider_2.value);
 
     drawGrid();
     drawEquation();
+
+    if(slider_1.value == 1)
+    {output_1.innerHTML = "";}
+    else
+    {output_1.innerHTML = ("/" + slider_1.value);}
 }
 
 function drawGrid()
@@ -82,9 +92,9 @@ function drawEquation()
     for(let i = 0; i <= canvas_1.width / factorX; i++)
     {
         let prevX = i - 1;
-        let prevY = (prevX * prevX / divider) + intercept;
+        let prevY = (prevX * prevX / divider) + yIntercept;
         let x = i;
-        let y = (x * x / divider) + intercept;
+        let y = (x * x / divider) + yIntercept;
 
         ctx_1.beginPath();
         ctx_1.setLineDash([3, 1]);
