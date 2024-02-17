@@ -23,8 +23,10 @@ slider_2.oninput = function()
 function updateValues()
 {
     ctx_1.clearRect(0, 0, canvas_1.width, canvas_1.height);
+
     slope = parseInt(slider_1.value);
     intercept = parseInt(slider_2.value);
+
     left = slope * -15 + intercept;
     right = slope * 15 + intercept;
 
@@ -44,16 +46,16 @@ function drawGrid()
     // Rectangle Around
     ctx_1.strokeRect(0, 0, canvas_1.width, canvas_1.height);
     
-    // Y-Axis
-    ctx_1.beginPath();
-    ctx_1.moveTo(canvas_1.width / 2, 0);
-    ctx_1.lineTo(canvas_1.width / 2, canvas_1.height);
-    ctx_1.stroke();
-
     // X-Axis
     ctx_1.beginPath();
     ctx_1.moveTo(0, canvas_1.height / 2);
     ctx_1.lineTo(canvas_1.width, canvas_1.height / 2);
+    ctx_1.stroke();
+
+    // Y-Axis
+    ctx_1.beginPath();
+    ctx_1.moveTo(canvas_1.width / 2, 0);
+    ctx_1.lineTo(canvas_1.width / 2, canvas_1.height);
     ctx_1.stroke();
 
     // Font
@@ -62,27 +64,30 @@ function drawGrid()
 
     for (let i = 0; i <= 30; i++)
     {
-        ctx_1.beginPath();
-        ctx_1.arc(canvas_1.width / 2, i * factor, 2, 0, 2 * Math.PI);
-        ctx_1.stroke();
-
+        // Dots on X-Axis
         ctx_1.beginPath();
         ctx_1.arc(i * factor, canvas_1.height / 2, 2, 0, 2 * Math.PI);
         ctx_1.stroke();
 
+        // Dots on Y-Axis
+        ctx_1.beginPath();
+        ctx_1.arc(canvas_1.width / 2, i * factor, 2, 0, 2 * Math.PI);
+        ctx_1.stroke();
+
         if (i % 3 == 0 && i != 0 && i != 15 && i != 30)
         {
-            // Numbers on Y-Axis
-            ctx_1.fillText((i - 15) * -1, canvas_1.width / 2 + 6, i * factor + 4);
-
             // Numbers on X-Axis
             ctx_1.fillText((i - 15), i * factor - 6, canvas_1.height / 2 - 4);
+
+            // Numbers on Y-Axis
+            ctx_1.fillText((i - 15) * -1, canvas_1.width / 2 + 6, i * factor + 4);
         }
     }
 }
 
 function drawInequality()
 {
+    // Line
     ctx_1.strokeStyle = "#8b0000";
 
     ctx_1.beginPath();
@@ -90,7 +95,7 @@ function drawInequality()
     ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right * factor + canvas_1.height / 2);
     ctx_1.stroke();
     
-
+    // Area Under the Line
     ctx_1.fillStyle = "rgb(200 0 0 / 20%)";
 
     ctx_1.beginPath();

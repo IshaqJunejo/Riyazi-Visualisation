@@ -54,16 +54,16 @@ function drawGrid()
     // Rectangle Around
     ctx_1.strokeRect(0, 0, canvas_1.width, canvas_1.height);
     
-    // Y-Axis
-    ctx_1.beginPath();
-    ctx_1.moveTo(canvas_1.width / 2, 0);
-    ctx_1.lineTo(canvas_1.width / 2, canvas_1.height);
-    ctx_1.stroke();
-
     // X-Axis
     ctx_1.beginPath();
     ctx_1.moveTo(0, canvas_1.height / 2);
     ctx_1.lineTo(canvas_1.width, canvas_1.height / 2);
+    ctx_1.stroke();
+
+    // Y-Axis
+    ctx_1.beginPath();
+    ctx_1.moveTo(canvas_1.width / 2, 0);
+    ctx_1.lineTo(canvas_1.width / 2, canvas_1.height);
     ctx_1.stroke();
 
     // Font
@@ -72,27 +72,30 @@ function drawGrid()
 
     for (let i = 0; i <= 30; i++)
     {
-        ctx_1.beginPath();
-        ctx_1.arc(canvas_1.width / 2, i * factor, 2, 0, 2 * Math.PI);
-        ctx_1.stroke();
-
+        // Dots on X-Axis
         ctx_1.beginPath();
         ctx_1.arc(i * factor, canvas_1.height / 2, 2, 0, 2 * Math.PI);
         ctx_1.stroke();
 
+        // Dots on Y-Axis
+        ctx_1.beginPath();
+        ctx_1.arc(canvas_1.width / 2, i * factor, 2, 0, 2 * Math.PI);
+        ctx_1.stroke();
+
         if (i % 3 == 0 && i != 0 && i != 15 && i != 30)
         {
-            // Numbers on Y-Axis
-            ctx_1.fillText((i - 15) * -1, canvas_1.width / 2 + 6, i * factor + 4);
-
             // Numbers on X-Axis
             ctx_1.fillText((i - 15), i * factor - 6, canvas_1.height / 2 - 4);
+
+            // Numbers on Y-Axis
+            ctx_1.fillText((i - 15) * -1, canvas_1.width / 2 + 6, i * factor + 4);
         }
     }
 }
 
 function drawEquation()
 {
+    // First Linear Equation
     ctx_1.strokeStyle = "#8b0000";
 
     ctx_1.beginPath();
@@ -100,6 +103,7 @@ function drawEquation()
     ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right1 * factor + canvas_1.height / 2);
     ctx_1.stroke();
 
+    // Second Linear Equation
     ctx_1.strokeStyle = "#013220";
 
     ctx_1.beginPath();
@@ -110,6 +114,7 @@ function drawEquation()
 
 function drawSolution()
 {
+    // Derive The Value for X and Y
     // Y = (slope1)X + Intercept1
     // Y = (slope2)X + Intercept2
 
@@ -118,17 +123,21 @@ function drawSolution()
     // X(slope1 - slope2) = Intercept2 - Intercept1
     // X = (Intercept2 - Intercept1) / (slope1 - slope2)
 
+    // Calculate the Value for X and Y
     let x, y;
 
     x = (intercept2 - intercept1) / (slope1 - slope2);
     y = (slope1) * x + intercept1;
 
+    // Round it Off
     x = Math.round(x * 100) / 100;
     y = Math.round(y * 100) / 100;
 
+    // Draw it on Canvas
     ctx_1.beginPath();
     ctx_1.arc(x * factor + canvas_1.width / 2, -y * factor + canvas_1.height / 2, 2, 0, 2 * Math.PI);
     ctx_1.stroke();
 
+    // Display its Value on Canvas
     ctx_1.fillText("( " + x + ", " + y + ")", x * factor + canvas_1.width / 2 + 6, -y * factor + canvas_1.height / 2);
 }

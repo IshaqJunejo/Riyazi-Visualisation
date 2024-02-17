@@ -1,9 +1,7 @@
-let yLeft = 0;
-let yRight = 0;
-
 let factor = canvas_1.width / 30;
-let m;
-let n;
+
+let slope, intercept;
+let left, right;
 
 let slider_2 = document.querySelector("#slider-2");
 let output_2 = document.querySelector("#value-2");
@@ -25,12 +23,15 @@ slider_2.oninput = function()
 function updateValues()
 {
     ctx_1.clearRect(0, 0, canvas_1.width, canvas_1.height);
-    m = parseInt(slider_1.value);
-    n = parseInt(slider_2.value);
-    yLeft = (160 * m) + n * factor;
-    yRight = (-160 * m) + n * factor;
+
+    slope = parseInt(slider_1.value);
+    intercept = parseInt(slider_2.value);
+
+    left = (-15 * slope) + intercept;
+    right = (15 * slope) + intercept;
+
     drawCoordinates();
-    drawLine();
+    drawEquation();
 
     if (slider_1.value == 1)
     {output_1.innerHTML = "X";}
@@ -44,17 +45,17 @@ function drawCoordinates()
 
     // Rectangle Around
     ctx_1.strokeRect(0, 0, canvas_1.width, canvas_1.height);
-    
-    // Y-Axis
-    ctx_1.beginPath();
-    ctx_1.moveTo(canvas_1.width / 2, 0);
-    ctx_1.lineTo(canvas_1.width / 2, canvas_1.height);
-    ctx_1.stroke();
 
     // X-Axis
     ctx_1.beginPath();
     ctx_1.moveTo(0, canvas_1.height / 2);
     ctx_1.lineTo(canvas_1.width, canvas_1.height / 2);
+    ctx_1.stroke();
+    
+    // Y-Axis
+    ctx_1.beginPath();
+    ctx_1.moveTo(canvas_1.width / 2, 0);
+    ctx_1.lineTo(canvas_1.width / 2, canvas_1.height);
     ctx_1.stroke();
 
     // Font
@@ -63,52 +64,33 @@ function drawCoordinates()
 
     for (let i = 0; i <= 30; i++)
     {
-        ctx_1.beginPath();
-        ctx_1.arc(canvas_1.width / 2, i * factor, 2, 0, 2 * Math.PI);
-        ctx_1.stroke();
-
+        // Dots on X-Axis
         ctx_1.beginPath();
         ctx_1.arc(i * factor, canvas_1.height / 2, 2, 0, 2 * Math.PI);
         ctx_1.stroke();
 
+        // Dots on Y-Axis
+        ctx_1.beginPath();
+        ctx_1.arc(canvas_1.width / 2, i * factor, 2, 0, 2 * Math.PI);
+        ctx_1.stroke();
+
         if (i % 3 == 0 && i != 0 && i != 15 && i != 30)
         {
-            // Numbers on Y-Axis
-            ctx_1.fillText((i - 15) * -1, canvas_1.width / 2 + 6, i * factor + 4);
-
             // Numbers on X-Axis
             ctx_1.fillText((i - 15), i * factor - 6, canvas_1.height / 2 - 4);
+
+            // Numbers on Y-Axis
+            ctx_1.fillText((i - 15) * -1, canvas_1.width / 2 + 6, i * factor + 4);
         }
     }
 }
 
-function drawFunction()
-{
-    ctx_1.beginPath();
-    ctx_1.moveTo(xAtBottom + canvas_1.width / 2, -15 + canvas_1.height / 2);
-    ctx_1.lineTo(15 + canvas_1.width / 2, yAtRight + canvas_1.height / 2);
-    ctx_1.stroke();
-
-    ctx_1.beginPath();
-    ctx_1.arc(xAtBottom + canvas_1.width / 2, (-15 + canvas_1.height / 2) * -1, 5, 0, Math.PI);
-    ctx_1.stroke();
-
-    ctx_1.beginPath();
-    ctx_1.arc(15 + canvas_1.width / 2, (yAtRight + canvas_1.height / 2) * -1, 5, Math.PI, 2 * Math.PI);
-    ctx_1.stroke();
-
-    ctx_1.beginPath();
-    ctx_1.moveTo(0, canvas_1.height);
-    ctx_1.lineTo(canvas_1.width, 0);
-    ctx_1.stroke();
-}
-
-function drawLine()
+function drawEquation()
 {
     ctx_1.strokeStyle = "#8b0000";
 
     ctx_1.beginPath();
-    ctx_1.moveTo(0, -yRight + canvas_1.height / 2);
-    ctx_1.lineTo(canvas_1.width, -yLeft + canvas_1.height / 2);
+    ctx_1.moveTo(-15 * factor + canvas_1.width / 2, -left * factor + canvas_1.height / 2);
+    ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right * factor + canvas_1.height / 2);
     ctx_1.stroke();
 }

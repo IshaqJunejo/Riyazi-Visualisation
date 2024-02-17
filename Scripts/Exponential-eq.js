@@ -24,6 +24,7 @@ slider_2.oninput = function()
 function updateValues()
 {
     ctx_1.clearRect(0, 0, canvas_1.width, canvas_1.height);
+
     divider = parseInt(slider_1.value);
     yIntercept = parseInt(slider_2.value);
 
@@ -61,14 +62,14 @@ function drawGrid()
 
     for (let i = 0; i <= 30; i++)
     {
-        // Dots on Y-Axis
-        ctx_1.beginPath();
-        ctx_1.arc(4, i * factorY, 2, 0, 2 * Math.PI);
-        ctx_1.stroke();
-
         // Dots on X-Axis
         ctx_1.beginPath();
         ctx_1.arc(i * factorX, canvas_1.height - factorX * 5, 2, 0, 2 * Math.PI);
+        ctx_1.stroke();
+
+        // Dots on Y-Axis
+        ctx_1.beginPath();
+        ctx_1.arc(4, i * factorY, 2, 0, 2 * Math.PI);
         ctx_1.stroke();
 
         if (i % 3 == 0 && i != 0 && i != 30)
