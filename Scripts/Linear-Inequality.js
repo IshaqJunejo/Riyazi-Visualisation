@@ -1,9 +1,7 @@
-let yLeft = 0;
-let yRight = 0;
-
 let factor = canvas_1.width / 30;
-let m;
-let n;
+
+let slope, intercept;
+let left, right;
 
 let slider_2 = document.querySelector("#slider-2");
 let output_2 = document.querySelector("#value-2");
@@ -25,12 +23,13 @@ slider_2.oninput = function()
 function updateValues()
 {
     ctx_1.clearRect(0, 0, canvas_1.width, canvas_1.height);
-    m = parseInt(slider_1.value);
-    n = parseInt(slider_2.value);
-    yLeft = (160 * m) + n * factor;
-    yRight = (-160 * m) + n * factor;
-    drawCoordinates();
-    drawLine();
+    slope = parseInt(slider_1.value);
+    intercept = parseInt(slider_2.value);
+    left = slope * -15 + intercept;
+    right = slope * 15 + intercept;
+
+    drawGrid();
+    drawInequality();
 
     if (slider_1.value == 1)
     {output_1.innerHTML = "X";}
@@ -38,7 +37,7 @@ function updateValues()
     {output_1.innerHTML = slider_1.value + "X";}
 }
 
-function drawCoordinates()
+function drawGrid()
 {
     ctx_1.strokeStyle = "#111";
 
@@ -82,33 +81,24 @@ function drawCoordinates()
     }
 }
 
-function drawFunction()
-{
-    ctx_1.beginPath();
-    ctx_1.moveTo(xAtBottom + canvas_1.width / 2, -15 + canvas_1.height / 2);
-    ctx_1.lineTo(15 + canvas_1.width / 2, yAtRight + canvas_1.height / 2);
-    ctx_1.stroke();
-
-    ctx_1.beginPath();
-    ctx_1.arc(xAtBottom + canvas_1.width / 2, (-15 + canvas_1.height / 2) * -1, 5, 0, Math.PI);
-    ctx_1.stroke();
-
-    ctx_1.beginPath();
-    ctx_1.arc(15 + canvas_1.width / 2, (yAtRight + canvas_1.height / 2) * -1, 5, Math.PI, 2 * Math.PI);
-    ctx_1.stroke();
-
-    ctx_1.beginPath();
-    ctx_1.moveTo(0, canvas_1.height);
-    ctx_1.lineTo(canvas_1.width, 0);
-    ctx_1.stroke();
-}
-
-function drawLine()
+function drawInequality()
 {
     ctx_1.strokeStyle = "#8b0000";
 
     ctx_1.beginPath();
-    ctx_1.moveTo(0, -yRight + canvas_1.height / 2);
-    ctx_1.lineTo(canvas_1.width, -yLeft + canvas_1.height / 2);
+    ctx_1.moveTo(-15 * factor + canvas_1.width / 2, -left * factor + canvas_1.height / 2);
+    ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right * factor + canvas_1.height / 2);
     ctx_1.stroke();
+    
+
+    ctx_1.fillStyle = "rgb(200 0 0 / 20%)";
+
+    ctx_1.beginPath();
+    ctx_1.moveTo(-15 * factor+ canvas_1.width / 2, -left * factor + canvas_1.height / 2);
+    ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right * factor + canvas_1.height / 2);
+    ctx_1.lineTo(canvas_1.width, canvas_1.height);
+    ctx_1.lineTo(0, canvas_1.height);
+    ctx_1.fill();
+
+    ctx_1.fillStyle = "rgb(50 50 50 / 100%)";
 }
