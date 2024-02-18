@@ -14,7 +14,7 @@
     </div>
     <div class="sliders-container">
         <div class="slider-container">
-            <input type="range" min="-5" max="5" class="slider" id="slider-1">
+            <input type="range" min="-5" max="5" value="1" class="slider" id="slider-1">
             <ul>
                 <li id="min"></li>
                 <li id="max"></li>
@@ -27,9 +27,14 @@
                 <li id="max"></li>
             </ul>
         </div>
+        <div class="checkbox-container">
+            <p><=</p>
+            <input type="range" min="0" max="1" value="0" id="checkbox">
+            <p>>=</p>
+        </div>
     </div>
     <div class="content">
-        <code>Y <= <em id="value-1"></em> <em id="value-2"></em></code>
+        <code>Y <em id="symbol"></em> <em id="value-1"></em> <em id="value-2"></em></code>
     </div>
     <script src="Scripts/Main.js"></script>
     <script src="Scripts/Slider.js"></script>

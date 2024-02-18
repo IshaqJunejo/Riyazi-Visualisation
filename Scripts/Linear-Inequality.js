@@ -7,6 +7,10 @@ let slider_2 = document.querySelector("#slider-2");
 let output_2 = document.querySelector("#value-2");
 output_2.innerHTML = (" + " + slider_2.value);
 
+let checkbox = document.querySelector("#checkbox");
+let symbol = document.querySelector("#symbol");
+symbol.innerHTML = "<=";
+
 updateValues();
 
 slider_2.oninput = function()
@@ -18,6 +22,16 @@ slider_2.oninput = function()
     else
     {output_2.innerHTML = ("");}
     updateValues();
+}
+
+checkbox.oninput = function()
+{
+    updateValues();
+
+    if (checkbox.value == 0)
+    {symbol.innerHTML = "<=";}
+    else
+    {symbol.innerHTML = ">=";}
 }
 
 function updateValues()
@@ -98,12 +112,24 @@ function drawInequality()
     // Area Under the Line
     ctx_1.fillStyle = "rgb(200 0 0 / 20%)";
 
-    ctx_1.beginPath();
-    ctx_1.moveTo(-15 * factor+ canvas_1.width / 2, -left * factor + canvas_1.height / 2);
-    ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right * factor + canvas_1.height / 2);
-    ctx_1.lineTo(canvas_1.width, canvas_1.height);
-    ctx_1.lineTo(0, canvas_1.height);
-    ctx_1.fill();
+    if (checkbox.value == 0)
+    {
+        ctx_1.beginPath();
+        ctx_1.moveTo(-15 * factor+ canvas_1.width / 2, -left * factor + canvas_1.height / 2);
+        ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right * factor + canvas_1.height / 2);
+        ctx_1.lineTo(canvas_1.width, canvas_1.height);
+        ctx_1.lineTo(0, canvas_1.height);
+        ctx_1.fill();
+    }
+    else
+    {
+        ctx_1.beginPath();
+        ctx_1.moveTo(-15 * factor+ canvas_1.width / 2, -left * factor + canvas_1.height / 2);
+        ctx_1.lineTo(15 * factor + canvas_1.width / 2, -right * factor + canvas_1.height / 2);
+        ctx_1.lineTo(canvas_1.width, 0);
+        ctx_1.lineTo(0, 0);
+        ctx_1.fill();
+    }
 
     ctx_1.fillStyle = "rgb(50 50 50 / 100%)";
 }
