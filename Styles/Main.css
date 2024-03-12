@@ -16,6 +16,7 @@ body
 {
     text-align: center;
     font-size: 64px;
+    margin: 24px 0;
 }
 
 .main-container
@@ -28,6 +29,7 @@ body
 .semi-title
 {
     font-size: 32px;
+    margin-top: 16px;
 }
 
 .topics-container-list
@@ -69,44 +71,16 @@ body
     text-decoration: none;
 }
 
-.visual
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 32px;
-}
-
-.value
-{
-    display: none;
-}
-
-.content
-{
-    display: block;
-    width: 90%;
-    margin: 16px auto;
-}
-
-.content p
-{
-    font-size: 16px;
-}
 
 @media screen and (max-width: 800px)
 {
-    .visual
+    .title
     {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 16px;
+        font-size: 32px;
     }
 
-    .visual canvas
+    .semi-title
     {
-        width: 320px;
-        max-width: 100vh;
-        height: 320px;
+        font-size: 24px;
     }
 }

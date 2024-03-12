@@ -43,9 +43,6 @@ function drawCoordinates()
 {
     ctx_1.strokeStyle = "#111";
 
-    // Rectangle Around
-    ctx_1.strokeRect(0, 0, canvas_1.width, canvas_1.height);
-
     // X-Axis
     ctx_1.beginPath();
     ctx_1.moveTo(0, canvas_1.height / 2);

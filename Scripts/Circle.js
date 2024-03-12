@@ -33,9 +33,6 @@ function updateValues()
 function drawGridCircle()
 {
     ctx_1.strokeStyle = "#111";
-
-    // Rectangle Around
-    ctx_1.strokeRect(0, 0, canvas_1.width, canvas_1.height);
     
     // X-Axis
     ctx_1.beginPath();
@@ -84,9 +81,6 @@ function drawGridCircle()
 function drawGridWave()
 {
     ctx_2.strokeStyle = "#111";
-
-    // Rectangle Around
-    ctx_2.strokeRect(0, 0, canvas_2.width, canvas_2.height);
 
     // X-Axis
     ctx_2.beginPath();

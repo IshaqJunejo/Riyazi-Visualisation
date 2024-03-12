@@ -4,78 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/Equation.css">
-    <link rel="stylesheet" href="Styles/Main.css">
+    <link rel="stylesheet" href="Styles/Topic.css">
     <link rel="stylesheet" href="Styles/Sliders.css">
     <title>Pythagorean Theorem</title>
 </head>
 <body>
-    <div class="visual">
-        <canvas id="canvas-1" width="320" height="320"></canvas>
-        <canvas id="canvas-2" width="320" height="320"></canvas>
-    </div>
-    <div class="sliders-container">
-        <div class="slider-container">
-            <input type="range" min="50" max="120" value="85" class="slider" id="slider-1">
-            <ul>
-                <li id="min"></li>
-                <li id="max"></li>
-            </ul>
+    <h2 class="title">Maths Visualizer</h2>
+    <div class="main-container">
+        <h3 class="semi-title">Pythagorean Theorem</h3>
+        <div class="visual">
+            <canvas id="canvas-1" width="320" height="320"></canvas>
+            <canvas id="canvas-2" width="320" height="320"></canvas>
         </div>
-        <div class="slider-container">
-            <input type="range" min="50" max="120" value="85" class="slider" id="slider-2">
-            <ul>
-                <li id="min"></li>
-                <li id="max"></li>
-            </ul>
+        <div class="sliders-container">
+            <div class="slider-container">
+                <input type="range" min="50" max="120" value="85" class="slider" id="slider-1">
+                <ul>
+                    <li id="min"></li>
+                    <li id="max"></li>
+                </ul>
+            </div>
+            <div class="slider-container">
+                <input type="range" min="50" max="120" value="85" class="slider" id="slider-2">
+                <ul>
+                    <li id="min"></li>
+                    <li id="max"></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="content">
-        <p>Base = <em id="value-2"></em></p>
-        <p>Base<sup>2</sup> = <em id="value-4"></em></p>
-        <p>Perp = <em id="value-1"></em></p>
-        <p>Perp<sup>2</sup> = <em id="value-3"></em></p>
-        <p>
-            <br>In the First Canvas, you can see a Rotated Square inside an Axis Aligned Square,
-            The Axis Aligned Square's all sides Length is <em>Base + Perp</em>, 
-            and the Square inside has the Length of <em>Hyp</em> on all sides,
-            and the difference of area between these Two Squares is of Four Triangles.<br>
-            Hence,
-        </p>
-        <code>
-             (Base + Perp)<sup>2</sup> - 4 Triangles = Hyp<sup>2</sup>
-        </code>
-        <p>
-            In the Second Canvas, you can see Two Small Squares inside a Square,
-            here too, the outside Square's Length on all sides is <em>Base + Perp</em>,
-            and the Length on all sides of inner Squares' is <em>Base</em> on one, and <em>Perp</em> on other,
-            here too, the difference of area between these is of Four Triangles.<br>
-            Hence,
-        </p>
-        <code>
-            (Base + Perp)<sup>2</sup> - 4 Triangles = Base<sup>2</sup> + Perp<sup>2</sup><br>
-            (Base + Perp)<sup>2</sup> - 4 Triangles = Hyp<sup>2</sup><br>
-            Hyp<sup>2</sup> = Base<sup>2</sup> + Perp<sup>2</sup>
-        </code>
-        <p>
-            We can also prove from this same diagram,<br>
-        </p>
-        <code>
-            (A + B)<sup>2</sup> = A<sup>2</sup> + 2AB + B<sup>2</sup>
-        </code>
-        <p>
-            As Area of a Right Triangle is equal to,
-        </p>
-        <code>
-            (1/2) * Base * Perp
-        </code>
-        <p>
-            If we put this value in the Equation above we get, 
-        </p>
-        <code>
-            (Base + Perp)<sup>2</sup> - 4 ((1/2) * Base * Perp) = Base<sup>2</sup> + Perp<sup>2</sup><br>
-            (Base + Perp)<sup>2</sup> - 2 (Base * Perp) = Base<sup>2</sup> + Perp<sup>2</sup><br>
-            (Base + Perp)<sup>2</sup>= Base<sup>2</sup>  + 2 (Base * Perp) + Perp<sup>2</sup>
-        </code>
+        <div class="content">
+            <p>Base = <em id="value-2"></em></p>
+            <p>Base<sup>2</sup> = <em id="value-4"></em></p>
+            <p>Perp = <em id="value-1"></em></p>
+            <p>Perp<sup>2</sup> = <em id="value-3"></em></p>
+            <p>
+                <br>In the First Canvas, you can see a Rotated Square inside an Axis Aligned Square,
+                The Axis Aligned Square's all sides Length is <em>Base + Perp</em>, 
+                and the Square inside has the Length of <em>Hyp</em> on all sides,
+                and the difference of area between these Two Squares is of Four Triangles.<br>
+                Hence,
+            </p>
+            <code>
+                 (Base + Perp)<sup>2</sup> - 4 Triangles = Hyp<sup>2</sup>
+            </code>
+            <p>
+                In the Second Canvas, you can see Two Small Squares inside a Square,
+                here too, the outside Square's Length on all sides is <em>Base + Perp</em>,
+                and the Length on all sides of inner Squares' is <em>Base</em> on one, and <em>Perp</em> on other,
+                here too, the difference of area between these is of Four Triangles.<br>
+                Hence,
+            </p>
+            <code>
+                (Base + Perp)<sup>2</sup> - 4 Triangles = Base<sup>2</sup> + Perp<sup>2</sup><br>
+                (Base + Perp)<sup>2</sup> - 4 Triangles = Hyp<sup>2</sup><br>
+                Hyp<sup>2</sup> = Base<sup>2</sup> + Perp<sup>2</sup>
+            </code>
+            <p>
+                We can also prove from this same diagram,<br>
+            </p>
+            <code>
+                (A + B)<sup>2</sup> = A<sup>2</sup> + 2AB + B<sup>2</sup>
+            </code>
+            <p>
+                As Area of a Right Triangle is equal to,
+            </p>
+            <code>
+                (1/2) * Base * Perp
+            </code>
+            <p>
+                If we put this value in the Equation above we get, 
+            </p>
+            <code>
+                (Base + Perp)<sup>2</sup> - 4 ((1/2) * Base * Perp) = Base<sup>2</sup> + Perp<sup>2</sup><br>
+                (Base + Perp)<sup>2</sup> - 2 (Base * Perp) = Base<sup>2</sup> + Perp<sup>2</sup><br>
+                (Base + Perp)<sup>2</sup>= Base<sup>2</sup>  + 2 (Base * Perp) + Perp<sup>2</sup>
+            </code>
+        </div>
     </div>
     <script src="Scripts/Main.js"></script>
     <script src="Scripts/Pythagorean.js"></script>

@@ -43,7 +43,6 @@ function updateValues()
 // Drawing Triangles on First Canvas
 function drawTriangles_1()
 {
-    ctx_1.strokeRect(0, 0, canvas_1.width, canvas_1.height);
     ctx_1.strokeRect(offset, offset, (base + perp), (base + perp));
 
     ctx_1.font = "12px Arial";
@@ -91,7 +90,6 @@ function drawTriangles_1()
 // Drawing Triangle on Second Canvas
 function drawTriangles_2()
 {
-    ctx_2.strokeRect(0, 0, canvas_2.width, canvas_2.height);
     ctx_2.strokeRect(offset, offset, (base + perp), (base + perp));
 
     ctx_2.font = "12px Arial";
