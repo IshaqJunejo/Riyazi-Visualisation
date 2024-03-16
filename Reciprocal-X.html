@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/Topic.css">
+    <link rel="stylesheet" href="Styles/Sliders.css">
+    <link rel="stylesheet" href="Styles/Equation.css">
+    <title>Reciprocal of X</title>
+</head>
+<body>
+    <h2 class="title">Maths Visualizer</h2>
+    <div class="main-container">
+        <h3 class="semi-title">Reciprocal of X</h3>
+        <div class="visual">
+            <canvas id="canvas-1" width="320px" height="320"></canvas>
+        </div>
+        <div class="sliders-container">
+            <div class="slider-container">
+                <input type="range" min="1" max="10" value="0" class="slider" id="slider-1">
+                <ul>
+                    <li id="min"></li>
+                    <li id="max"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <code>y = <em id="value-1"></em> / x</code>
+        </div>
+    </div>
+    <script src="Scripts/Main.js"></script>
+    <script src="Scripts/Reciprocal.js"></script>
+    <script src="Scripts/Slider.js"></script>
+</body>
+</html>
