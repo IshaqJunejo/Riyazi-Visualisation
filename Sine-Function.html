@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/Topic.css">
+    <link rel="stylesheet" href="Styles/Sliders.css">
+    <link rel="stylesheet" href="Styles/Equation.css">
+    <title>Sine Function</title>
+</head>
+<body>
+    <h2 class="title">Maths Visualizer</h2>
+    <div class="main-container">
+        <h3 class="semi-title">Sine Function</h3>
+        <div class="visual">
+            <canvas id="canvas-1" width="320px" height="320px"></canvas>
+        </div>
+        <div class="sliders-container">
+            <div class="slider-container">
+                <input type="range" min="0" max="360" value="0" class="slider" id="slider-1">
+                <ul>
+                    <li id="min"></li>
+                    <li id="max"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <code>Sin(<em id="value-1"></em>) = <em id="value-2"></em></code>
+        </div>
+    </div>
+    <script src="Scripts/Main.js"></script>
+    <script src="Scripts/Sine-Function.js"></script>
+    <script src="Scripts/Slider.js"></script>
+</body>
+</html>
