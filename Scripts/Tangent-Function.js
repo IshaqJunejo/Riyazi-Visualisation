@@ -76,13 +76,16 @@ function drawWave()
 
     for (let i = 1; i <= angle; i++)
     {
-        let y0 = Math.tan((i -1) * Math.PI / 180) * factorY * -0.5 + canvas_1.height / 2;
-        let y1 = Math.tan(i * Math.PI / 180) * factorY * -0.5 + canvas_1.height / 2;
+        if (i % 90 != 1)
+        {
+            let y0 = Math.tan((i -1) * Math.PI / 180) * factorY * -0.5 + canvas_1.height / 2;
+            let y1 = Math.tan(i * Math.PI / 180) * factorY * -0.5 + canvas_1.height / 2;
 
-        ctx_1.beginPath();
-        ctx_1.moveTo((i - 1) * factorX2 + 12, y0);
-        ctx_1.lineTo(i * factorX2 + 12, y1);
-        ctx_1.stroke();
+            ctx_1.beginPath();
+            ctx_1.moveTo((i - 1) * factorX2 + 12, y0);
+            ctx_1.lineTo(i * factorX2 + 12, y1);
+            ctx_1.stroke();
+        }
     }
 
     // Draw the Dotted Line
