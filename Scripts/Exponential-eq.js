@@ -95,11 +95,11 @@ function drawEquation()
         let y = (x * x / divider) + yIntercept;
 
         ctx_1.beginPath();
-        ctx_1.setLineDash([3, 1]);
+        //ctx_1.setLineDash([3, 1]);
         ctx_1.moveTo(prevX * factorX + 4, prevY * factorY * -1 + canvas_1.height - 5 * factorY);
         ctx_1.lineTo(x * factorX + 4, y * factorY * -1 + canvas_1.height - 5 * factorY);
         ctx_1.stroke();
 
-        ctx_1.setLineDash([0]);
+        //ctx_1.setLineDash([0]);
     }
 }

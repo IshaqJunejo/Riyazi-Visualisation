@@ -95,11 +95,11 @@ function drawEquation()
         let y = (Math.log(x) * multiple) + parseFloat(yIntercept);
 
         ctx_1.beginPath();
-        ctx_1.setLineDash([3, 1]);
+        //ctx_1.setLineDash([3, 1]);
         ctx_1.moveTo(prevX * factorX + 4, -((prevY + 5) * factorY - canvas_1.height));
         ctx_1.lineTo(x * factorX + 4, -((y + 5) * factorY - canvas_1.height));
         ctx_1.stroke();
 
-        ctx_1.setLineDash([0]);
+        //ctx_1.setLineDash([0]);
     }
 }
