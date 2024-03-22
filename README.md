@@ -1,4 +1,4 @@
-# Visualize-Math
+# Riyazi-Visualisation
 
 <center>
 
@@ -8,9 +8,12 @@
 
 </center>
 
+## Meaning
+**Riyazi** (written as **رياضي**) is a word used in Sindhi Language, and also in regionally neighbouring Languages, which translates to **Mathematics**.
+
 ## Introduction
 
-Visualize-Math is a small Javascript Project that can help you visualize a few complicated Mathematical Concepts.
+Riyazi-Visualisation is a small Javascript Project that can help you visualize a few complicated Mathematical Concepts.
 This repository contains the Code for creating the Visualizations of Pre-Calculus Concepts.
 
 If you're a Student, you can use this to understand these Mathematical Concepts relatively easily.
@@ -20,12 +23,16 @@ If you're an Educator, you can use this to help your students with grasping thes
 
 This is a small repository so-far, and only has a few Pre-Calculus Concepts being Visualized, and here is a list of them:
 
+- Pythagorean Theorem
 - Linear Equation
-- Exponential Equation
-- Logarithmic Equation
 - Solution to 2 Linear Equations
 - Linear Inequality
-- Pythagorean Theorem
+- Exponential Equation
+- Logarithmic Equation
+- Reciprocal of X
+- Sine Function
+- Cosine Function
+- Tangent Function
 - Unit Circle
 
 ## Contribution
@@ -39,4 +46,4 @@ if you're interested in contributing to this project, you can get started by:
 
 ## Contact
 
-If you have any feedback, suggestions, you encounter bugs, or would like to request to add new visualizations for new Mathematical Concepts, you can reach out by opening an issue on GitHub or by contacting directly at [[ishaque.junejo.dev@gmail.com](mailto:ishaque.junejo.dev@gmail.com)]
+If you have any feedback, suggestions, you encounter bugs, or would like to request to add new visualizations for new Mathematical Concepts, you can reach out by opening an issue on GitHub or by contacting directly at **ishaque.junejo.dev@gmail.com**
