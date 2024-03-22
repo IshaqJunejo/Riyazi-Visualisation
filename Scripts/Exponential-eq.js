@@ -1,7 +1,7 @@
 let divider;
 let yIntercept;
 
-let factorX = canvas_1.width / 30;
+let factorX = canvas_1.width / 9;
 let factorY = canvas_1.height / 30;
 
 let slider_2 = document.querySelector("#slider-2");
@@ -43,8 +43,8 @@ function drawGrid()
 
     // X-Axis
     ctx_1.beginPath();
-    ctx_1.moveTo(0, canvas_1.height - factorX * 5);
-    ctx_1.lineTo(canvas_1.width, canvas_1.height - factorX * 5);
+    ctx_1.moveTo(0, canvas_1.height - factorX * 3 / 2);
+    ctx_1.lineTo(canvas_1.width, canvas_1.height - factorX * 3 / 2);
     ctx_1.stroke();
 
     // Y-Axis
@@ -61,7 +61,7 @@ function drawGrid()
     {
         // Dots on X-Axis
         ctx_1.beginPath();
-        ctx_1.arc(i * factorX, canvas_1.height - factorX * 5, 2, 0, 2 * Math.PI);
+        ctx_1.arc(i * factorX, canvas_1.height - factorX * 3 / 2, 2, 0, 2 * Math.PI);
         ctx_1.stroke();
 
         // Dots on Y-Axis
@@ -69,10 +69,10 @@ function drawGrid()
         ctx_1.arc(4, i * factorY, 2, 0, 2 * Math.PI);
         ctx_1.stroke();
 
-        if (i % 3 == 0 && i != 0 && i != 30)
+        if (i % 2 == 0 && i != 0 && i != 30)
         {
             // Numbers on X-Axis
-            ctx_1.fillText(i, i * factorX - 4, canvas_1.height - factorX * 5 - 6);            
+            ctx_1.fillText(i, i * factorX - 4, canvas_1.height - factorX * 3 / 2 - 6);
         }
 
         if ((i - 25) % 3 == 0 && (i - 25) != 0)
@@ -87,9 +87,9 @@ function drawEquation()
 {
     ctx_1.strokeStyle = "#013220";
 
-    for(let i = 0; i <= canvas_1.width / factorX; i++)
+    for(let i = 0.0; i <= canvas_1.width / factorX; i += 0.3)
     {
-        let prevX = i - 1;
+        let prevX = i - 0.3;
         let prevY = (prevX * prevX / divider) + yIntercept;
         let x = i;
         let y = (x * x / divider) + yIntercept;
